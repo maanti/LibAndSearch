@@ -25,8 +25,6 @@ public class MainController {
 
         List<Sources> list = new ArrayList<>();
         list.addAll(sourcesRepository.findSourcesByName(name));
-        System.out.println(name);
-        System.out.println(list.size());
         return list;
 
     }
