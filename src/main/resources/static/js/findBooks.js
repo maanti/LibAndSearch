@@ -5,7 +5,8 @@ $(function () {
                 url: "/findBook",
                 type: "POST",
                 data: {
-                    name: $("#nameBook").val()
+                    search_req: $("#search_req").val(),
+                    filter: document.querySelector('input[name="filter"]:checked').value
                 },
                 dataType: 'json',
                 success: function (jq) {

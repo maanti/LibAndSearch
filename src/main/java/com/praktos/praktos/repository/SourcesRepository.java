@@ -9,6 +9,6 @@ public interface SourcesRepository extends CrudRepository<Sources,Integer> {
     List<Sources> findSourcesByAuthor(String author);
     List<Sources> findSourcesByName(String name);
     List<Sources> findSourcesByPublisher(String publisher);
-    List<Sources> findSourcesById(Integer id);
-
+    List<Sources> findSourcesByYear(Integer year);
+    List<Sources> findSourcesByTags(String tags);
 }

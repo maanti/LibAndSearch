@@ -303,7 +303,7 @@ ul#menu-main > li > a:hover {
 	height: 2.9em;
 	width:50%;
 }
-#headerwrap input[type=submit] {
+#headerwrap input[type=submit], input[type=button] {
 	font-family: 'Open Sans', cursive;
 	color: #fff;
 	width: 185px;
@@ -321,6 +321,21 @@ ul#menu-main > li > a:hover {
 }
 #headerwrap input[type=submit]:hover, #headerwrap input[type=submit]:active {
 	background: #43413e !important;
+}
+#headerwrap table{
+	border: solid #f0bf00;
+	color: #FFFFFF;
+	font-family: 'Open Sans', cursive;
+	font-size: 1em;
+	font-weight: normal;
+	margin: 1em 0;
+}
+#headerwrap #radio_buttons{
+	color: #FFFFFF;
+	font-family: 'Open Sans', cursive;
+	font-size: 1em;
+	font-weight: normal;
+	margin: 1em 0;
 }
 /*========== Social Icons ==========*/
 ul.icon {

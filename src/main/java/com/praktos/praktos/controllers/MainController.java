@@ -20,12 +20,39 @@ public class MainController {
 
     @RequestMapping(value = "/findBook", method = RequestMethod.POST)
     public @ResponseBody
-    List<Sources> findBook(@RequestParam("name") String name)
+    List<Sources> findBook(@RequestParam("search_req") String search_req,
+                           @RequestParam("filter") String filter)
     {
-
         List<Sources> list = new ArrayList<>();
-        list.addAll(sourcesRepository.findSourcesByName(name));
-        return list;
+        switch(filter){
+            case ("name"): {
+                System.out.println(filter);
+                list.addAll(sourcesRepository.findSourcesByName(search_req));
+                break;
+            }
+            case ("author"): {
+                System.out.println(filter);
+                list.addAll(sourcesRepository.findSourcesByAuthor(search_req));
+                break;
+            }
+            case ("publisher"): {
+                System.out.println(filter);
+                list.addAll(sourcesRepository.findSourcesByPublisher(search_req));
+                break;
+            }
+            case ("year"): {
+                System.out.println(filter);
+                list.addAll(sourcesRepository.findSourcesByYear(Integer.parseInt(search_req)));
+                break;
+            }
+            case ("tags"): {
+                System.out.println(filter);
+                list.addAll(sourcesRepository.findSourcesByTags(search_req));
+                break;
+            }
+        }
 
+        return list;
     }
+
 }
