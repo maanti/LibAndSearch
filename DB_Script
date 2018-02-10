@@ -1,0 +1,37 @@
+DROP TABLE p_sources;
+CREATE TABLE p_sources
+(
+  id        SERIAL  NOT NULL
+    CONSTRAINT p_sources_pkey
+    PRIMARY KEY,
+  name      VARCHAR,
+  author    VARCHAR,
+  publisher VARCHAR,
+  year      INTEGER,
+  type      VARCHAR NOT NULL,
+  link      VARCHAR,
+  path      VARCHAR,
+  tags      VARCHAR
+);
+INSERT INTO p_sources (name, author, publisher, year, type, link, path, tags)
+VALUES ('Сайт компании SPIRIT', '', '', 2009, 'link', 'https://www.videomost.com/', '', '#компания #видеоконференции #ПО'),
+  ('Проблемы создание многоуровневой системы распознавания речи', 'Курочкин С.Н', 'Автоматизация и управление в машиностроении', 1997, 'pdf', 'http://sprc.w.pw/materials/Problemy_sozdanija_mnogourovnevoj_sistemy_raspoznovanii_rechi_Kurochkin.pdf', '', '#СТАНКИН #статья'),
+  ('Разработка языковых моделей на сетях с самостоятельной адаптацией', 'Ланкин Ю.П.', 'МИФИ', 2001, 'pdf', 'http://library.mephi.ru/data/scientific-sessions/2001/Neuro_1/2281.html', '', '#МИФИ #Нейроинформатика #доклад #конференция'),
+  ('Speech And Audio Signal Processing', 'B. Gold', 'WILEY', 2011, 'pdf', 'http://sprc.w.pw/materials/Speech_and_Audio_Signal_Processing_Processing_and_Perception_of_Speech_and_Music.pdf', '', '#английский #книга '),
+  ('Говорящие с абонентом', 'Кузнецова О.', 'Connect', 2005, 'pdf', 'http://www.connect.ru/article.asp?id=5475', '', '#статья #Connect #IVR #интерактивные #меню'),
+  ('Скрытая марковская модель', 'Википедия', 'Википедия', 2008, 'pdf', 'https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F_%D0%BC%D0%B0%D1%80%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C', '', '#wiki #википедия #вероятность #вероятностные #модели #распознавание #образов'),
+  ('Система автоматического распознавания русской речи SIRIUS', 'Рожнин А.Л.', 'Санкт-Петербургский институт информатики и автоматизации РАН', NULL , 'pdf', 'http://sprc.w.pw/materials/Automatic_system_for_Russian_speech_recognition_SIRIUS.pdf', '', '#статья #СПИИРАН #SIRIUS #САРР'),
+  ('Система пофонемного автоматического распознавания команд русской речи для произвольного словаря', 'Киселев В.В.', 'РГГУ', 2007, 'pdf', 'http://www.dialog-21.ru/digests/dialog2007/materials/html/36.htm', '', '#статья #Диалог #конференция #центр #речевых #технологий'),
+  ('Модели,методы алгоритмы и архитектуры систем распознавания речи', 'Рязанов В.В.', 'Вычислительный центр им. А.А.Дородницына', 2006, 'pdf', 'http://sprc.w.pw/materials/Modeli,%20metody,%20algoritmy%20i%20arhitektury%20sistem%20raspoznavanija%20rechi.pdf', '', '#сборник #нейронные #сети #НИОКР #СДО #РАН'),
+  ('Программное обеспечение для распознавания речевого сигнала из телефонной сети', 'Чучупал В.Я.', 'АЛЕВ-В', 1999, 'pdf', 'http://www.mmro.ru/files/1999-mmro-09.pdf', '', '#ММРО #конференция #доклад #математические #методы #распознавания #речи'),
+  ('Распознавание речи и диктора в системе мультимедийной идентификации личности', 'Чучупал В.Я.', 'МАКС Пресс', 2005, 'pdf', 'http://sprc.w.pw/materials/MMPO-12.pdf', '', '#ММРО #конференция #доклад #математические #методы #распознавания #речи'),
+  ('Сеть корней глаголов русского языка', 'Введенский В.Л.', 'Курчатовский институт', 2006, 'pdf', 'http://sprc.w.pw/materials/Set''%20kornej%20glagolov%20russkogo%20jazyka.pdf', '', '#нейроинформатика #ВНТК #доклад #конференция'),
+  ('Speech Recognition HOWTO', 'Cook S.', '', 2002, 'pdf', 'http://www.faqs.org/docs/Linux-HOWTO/Speech-Recognition-HOWTO.html', '', '#FAQ #интернет #linux #английский'),
+  ('Fast Implementation Methods For Viterbi-Based Word-Spotting', 'Knill K.M.', 'ICASSP', 1996, 'pdf', 'http://sprc.w.pw/materials/Fast%20Implementation%20Methods%20For%20Viterbi-Based%20Word-Spotting.pdf', '', '#cambridge #статья #английский'),
+  ('Цифровая обработка сигналов', 'Оппенгейм А.', 'Техносфера', 2009, 'djvu', '', '', '#перевод'),
+  ('Visualization Method for Speaker Dependencies with Different Microphones', 'Maier A.', 'Journal of Pattern Recognition Research', 2009, 'pdf', 'http://www.jprr.org/index.php/jprr/article/viewFile/112/28', '', '#QMOS #JPRR #статья #английский'),
+  ('Fundamentals of speech recognition', 'Rabiner L.', 'Prentice-Hall', 1993, 'djvu', '', '', '#книга #английский'),
+  ('Hidden Markov  models for speech recognition', 'Rabiner L.', 'Technometrics', 1991, 'pdf', 'http://sprc.w.pw/materials/Hidden%20Markov%20Models%20for%20Speech%20Recognition.pdf', '', '#английский #статья #AT&T'),
+  ('Цифровая обработка речевых сигналов', 'Rabiner L.', 'Радио и связь', 1981, 'pdf', 'http://sprc.w.pw/materials/Cifrovaja%20obrabotka%20rechevyh%20signalov.pdf', '', '#перевод #статья'),
+  ('Система автоматического распознавания речи SPIRIT ASR Engine', 'Иконин С.Ю.', 'Цифровая обработка сигналов', 2003, 'pdf', 'http://sprc.w.pw/materials/Sistemy%20avtomaticheskogo%20raspoznavanija%20rechi.pdf', '', '#статья #SPIRIT'),
+  ('Скрытые Марковские процессы', 'Гультяева Т.А.', 'НГТУ', NULL, 'pdf', 'http://sprc.w.pw/materials/Osnovy%20teorii%20skrytyh%20markovskih%20modelej.pdf', '', '#книга #вероятность #марковские #модели');
