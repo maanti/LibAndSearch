@@ -1,19 +1,19 @@
-DROP TABLE p_sources;
-CREATE TABLE p_sources
+DROP TABLE sources;
+CREATE TABLE sources
 (
   id        SERIAL  NOT NULL
-    CONSTRAINT p_sources_pkey
+    CONSTRAINT sources_pkey
     PRIMARY KEY,
   name      VARCHAR,
   author    VARCHAR,
   publisher VARCHAR,
   year      INTEGER,
-  type      VARCHAR NOT NULL,
+  type      VARCHAR,
   link      VARCHAR,
   path      VARCHAR,
   tags      VARCHAR
 );
-INSERT INTO p_sources (name, author, publisher, year, type, link, path, tags)
+INSERT INTO sources (name, author, publisher, year, type, link, path, tags)
 VALUES ('Сайт компании SPIRIT', '', '', 2009, 'link', 'https://www.videomost.com/', '', '#компания #видеоконференции #ПО'),
   ('Проблемы создание многоуровневой системы распознавания речи', 'Курочкин С.Н', 'Автоматизация и управление в машиностроении', 1997, 'pdf', 'http://sprc.w.pw/materials/Problemy_sozdanija_mnogourovnevoj_sistemy_raspoznovanii_rechi_Kurochkin.pdf', '', '#СТАНКИН #статья'),
   ('Разработка языковых моделей на сетях с самостоятельной адаптацией', 'Ланкин Ю.П.', 'МИФИ', 2001, 'pdf', 'http://library.mephi.ru/data/scientific-sessions/2001/Neuro_1/2281.html', '', '#МИФИ #Нейроинформатика #доклад #конференция'),
