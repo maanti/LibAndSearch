@@ -26,27 +26,22 @@ public class MainController {
         List<Sources> list = new ArrayList<>();
         switch(filter){
             case ("name"): {
-                System.out.println(filter);
                 list.addAll(sourcesRepository.findSourcesByName(search_req));
                 break;
             }
             case ("author"): {
-                System.out.println(filter);
                 list.addAll(sourcesRepository.findSourcesByAuthor(search_req));
                 break;
             }
             case ("publisher"): {
-                System.out.println(filter);
                 list.addAll(sourcesRepository.findSourcesByPublisher(search_req));
                 break;
             }
             case ("year"): {
-                System.out.println(filter);
                 list.addAll(sourcesRepository.findSourcesByYear(Integer.parseInt(search_req)));
                 break;
             }
             case ("tags"): {
-                System.out.println(filter);
                 list.addAll(sourcesRepository.findSourcesByTags(search_req));
                 break;
             }

@@ -337,6 +337,15 @@ ul#menu-main > li > a:hover {
 	font-weight: normal;
 	margin: 1em 0;
 }
+#headerwrap #main{
+	color: #FFFFFF;
+	font-family: 'Open Sans', cursive;
+	font-size: 1em;
+	font-weight: normal;
+	margin: 1em 0;
+	text-align: left;
+
+}
 /*========== Social Icons ==========*/
 ul.icon {
 	font-size:54px;

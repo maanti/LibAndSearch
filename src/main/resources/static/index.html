@@ -21,6 +21,7 @@ body {
 <script src="js/jquery.localscroll-1.2.7-min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/findBooks.js"></script>
+    <script src="js/getInformation.js"></script>
 </head>
 <body>
 <div class="navbar-wrapper">
@@ -50,9 +51,8 @@ body {
     <div class="container">
       <div class="row">
         <div class="span12">
-          <h2>Поиск по каталогу:</h2>
           <input type="text" id="search_req" name="search_req" placeholder="speech recognition..." class="cform-text" size="40" title="search_req">
-          <input type="button" id="search" value="Найти" class="cform-submit"><br>
+          <input type="button" onclick="update()" value="Найти" class="cform-submit"><br>
             <div id="radio_buttons">
                 <input type="radio" name="filter" id="name_filter" value="name" checked>&nbsp;По названию&nbsp;&nbsp;
                 <input type="radio" name="filter" id="author_filter" value="author">&nbsp;По автору&nbsp;&nbsp;
@@ -60,19 +60,25 @@ body {
                 <input type="radio" name="filter" id="year_filter" value="year">&nbsp;По году&nbsp;&nbsp;
                 <input type="radio" name="filter" id="tag_filter" value="tag">&nbsp;По тегам&nbsp;&nbsp;
             </div>
-            <table cellspacing="2">
-                <thead>
-                <tr>
-                    <th>Название книги</th>
-                    <th>Автор</th>
-                    <th>Издательство</th>
-                </tr>
-                </thead>
+            <!--<table cellspacing="2">-->
+                <!--&lt;!&ndash;<thead>&ndash;&gt;-->
+                <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th>Название книги</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th>Автор</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th>Издательство</th>&ndash;&gt;-->
+                <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+                <!--&lt;!&ndash;</thead>&ndash;&gt;-->
 
-                <tbody id="tbody">
+                <!--&lt;!&ndash;<tbody id="tbody">&ndash;&gt;-->
 
-                </tbody>
-            </table>
+                <!--&lt;!&ndash;</tbody>&ndash;&gt;-->
+            <!--</table>-->
+            <div id="main">
+
+            </div>
+
+
+
         </div>
       </div>
     </div>
