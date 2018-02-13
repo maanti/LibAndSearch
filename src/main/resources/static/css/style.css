@@ -36,6 +36,7 @@ div, article, section, header, footer, nav, li {
 	content:".";
 	visibility:hidden; /* For clearing */
 }
+
 body {
 	background:#0b333f;
 	color: #0b333f;
@@ -49,6 +50,19 @@ color:#333;
 ::selection {
 background:#f0bf00;
 color:#333;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #f0bf00;
+	outline: 1px solid slategrey;
 }
 /*---------- FORMS ----------*/
 
@@ -77,8 +91,6 @@ input, button, select, textarea {
 30 / 16 = 		1.875em 		(30px equivalent)
 
 */
-
-
 
 p {
 	font-size: 1em; /* 16px */
@@ -120,6 +132,7 @@ h3 {
 	line-height: 1.3333; /* 24px */
 	margin-top: 1.3333em;
 	margin-bottom: 0em;
+	left: 2em;
 }
 h4 {
 	font-size: 1em; /* 16px */
@@ -231,6 +244,7 @@ em {
 	overflow:hidden;/* No fixed height, will break collapsible nav */
 }
 #menu-main {
+	overflow: scroll;
 	margin-top: 1.125em;
 }
 ul#menu-main > li > a {
@@ -240,6 +254,7 @@ ul#menu-main > li > a {
 	color: #fff;
 }
 ul#menu-main > li > a:hover {
+	overflow-scrolling: auto;
 	background: #f0bf00;
 	padding: 9px 15px;
 	border-radius: 3px;
@@ -344,6 +359,16 @@ ul#menu-main > li > a:hover {
 	font-weight: normal;
 	margin: 1em 0;
 	text-align: left;
+}
+
+#headerwrap #main h3{
+	width: auto;
+	position: relative;
+	left: 1em;
+	right: 1em;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 #headerwrap #main div{
