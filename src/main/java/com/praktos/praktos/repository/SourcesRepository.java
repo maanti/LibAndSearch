@@ -1,6 +1,7 @@
 package com.praktos.praktos.repository;
 
 import com.praktos.praktos.entity.Sources;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
