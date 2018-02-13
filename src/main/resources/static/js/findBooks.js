@@ -10,7 +10,6 @@ $(function () {
                 },
                 dataType: 'json',
                 success: function (jq) {
-                    alert("meow");
                     var table = document.getElementById('tbody');
                     var rowCount = table.rows.length;
                     for (var i = rowCount-1; i >= 0; i--) {
@@ -27,7 +26,6 @@ $(function () {
                         td32.innerHTML = t.author; //создаем еще столбец
                         var td33 = document.createElement('td');
                         td33.innerHTML = t.publisher; //создаем еще столбец
-                        alert(td33);
 
                         tr31.appendChild(td31); //кладем в новосозданную строку первый новосозданный столбец
                         tr31.appendChild(td32); //кладем в новосозданную строку второй новосозданный столбец
