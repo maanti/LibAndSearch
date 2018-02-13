@@ -344,8 +344,20 @@ ul#menu-main > li > a:hover {
 	font-weight: normal;
 	margin: 1em 0;
 	text-align: left;
-
 }
+
+#headerwrap #main div{
+	border-radius: 10px;
+	background-color: rgba(227, 231, 228, 1);
+	color: black;
+	-webkit-box-shadow: 0 3px 2px #777;
+	-moz-box-shadow: 0 3px 2px #777;
+	box-shadow: 0 3px 2px #777;
+}
+#headerwrap #main div a {
+	color: dodgerblue;
+}
+
 /*========== Social Icons ==========*/
 ul.icon {
 	font-size:54px;

@@ -52,11 +52,12 @@ function draw(t) {
 
     var li5 = document.createElement("h3");
     li5.innerHTML ="Ссылка: ";
-    var b4 = document.createElement("b");
-    b4.innerHTML = t.link;
-    li5.appendChild(b4);
+    var a = document.createElement("a");
+    a.href = t.link;
+    a.innerHTML = t.link;
+    li5.appendChild(a);
 
-    div2.appendChild(li1);
+    /*div2.appendChild(li1);
     div2.appendChild(li2);
     div2.appendChild(li3);
     div2.appendChild(li4);
@@ -64,7 +65,14 @@ function draw(t) {
 
     innerDiv1.appendChild(div2);
     innerDiv.appendChild(innerDiv1);
-    mainDiv.appendChild(innerDiv);
+    mainDiv.appendChild(innerDiv);*/
+    div2.appendChild(li1);
+    div2.appendChild(li2);
+    div2.appendChild(li3);
+    div2.appendChild(li4);
+    div2.appendChild(li5);
+
+    mainDiv.appendChild(div2);
 }
 
 function clear() {

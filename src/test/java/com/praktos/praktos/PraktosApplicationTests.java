@@ -15,5 +15,4 @@ public class PraktosApplicationTests {
     public ModelAndView contextLoads() {
 		return new ModelAndView("index");
 	}
-
 }
