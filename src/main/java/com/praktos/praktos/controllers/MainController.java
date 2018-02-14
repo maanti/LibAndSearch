@@ -53,9 +53,13 @@ public class MainController {
     @RequestMapping("/getAuthorsList")
     public @ResponseBody List<Object> getAuthorsList(){
         List<Object> authors = sourcesRepository.getAuthorsList();
-        System.out.println(authors.get(0).toString());
         return authors;
     }
 
+    @RequestMapping("/getCatalog")
+    public @ResponseBody List<Sources> getCatalog(){
+        List<Sources> sources = sourcesRepository.findAll();
+        return sources;
+    }
 
 }

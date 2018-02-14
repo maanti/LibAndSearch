@@ -21,9 +21,10 @@
     <script src="js/jquery.localscroll-1.2.7-min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/findBooks.js"></script>
-    <script src="js/getInformation.js"></script>
+    <script src="js/getAuthors.js"></script>
+
 </head>
-<body>
+<body onload="update()">
 <div class="navbar-wrapper">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
@@ -47,15 +48,12 @@
 </div>
 <div id="headerwrap">
     <header class="clearfix">
-        <h1><span>Распознавание речи</span><br>Каталог полезных материалов</h1>
-
         <div class="container">
             <div class="row">
                 <div class="span12">
+                    <div id="main">
 
-
-
-
+                    </div>
                 </div>
             </div>
         </div>
