@@ -16,7 +16,7 @@ public interface SourcesRepository extends CrudRepository<Sources,Integer> {
     List<Sources> findSourcesByYear(Integer year);
     List<Sources> findSourcesByTags(String tags);
 
-    @Query("select distinct author from Sources ORDER BY author")
+@Query("select distinct author from Sources ORDER BY author")
     List<Object> getAuthorsList();
 
 }
