@@ -344,6 +344,7 @@ ul#menu-main > li > a:hover {
 	font-weight: normal;
 	margin: 1em 0;
 }
+
 #headerwrap #radio_buttons{
 	color: #FFFFFF;
 	font-family: 'Open Sans', cursive;
@@ -351,8 +352,9 @@ ul#menu-main > li > a:hover {
 	font-weight: normal;
 	margin: 1em 0;
 }
+
 #headerwrap #main{
-	color: #FFFFFF;
+	color: #3b798e;
 	font-family: 'Open Sans', cursive;
 	font-size: 1em;
 	font-weight: normal;
@@ -372,11 +374,11 @@ ul#menu-main > li > a:hover {
 
 #headerwrap #main div{
 	border-radius: 10px;
-	background-color: rgba(227, 231, 228, 1);
-	color: black;
-	-webkit-box-shadow: 0 3px 2px #777;
-	-moz-box-shadow: 0 3px 2px #777;
-	box-shadow: 0 3px 2px #777;
+	background-color: #2a5868;
+	color: rgba(227, 231, 228, 1);
+	-webkit-box-shadow: 0 1.5px 2px #3b798e;
+	-moz-box-shadow: 0 1.5px 2px #3b798e;
+	box-shadow: 0 1.5px 2px #3b798e;
 }
 #headerwrap #main div a {
 	color: dodgerblue;
