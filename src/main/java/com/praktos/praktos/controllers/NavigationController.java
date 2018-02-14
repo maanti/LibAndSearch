@@ -59,8 +59,4 @@ public class NavigationController {
         model.setViewName("../static/catalog");
         return model;
     }
-
-
-
-
 }
