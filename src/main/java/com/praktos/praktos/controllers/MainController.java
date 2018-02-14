@@ -26,23 +26,23 @@ public class MainController {
         List<Sources> list = new ArrayList<>();
         switch(filter){
             case ("name"): {
-                list.addAll(sourcesRepository.findSourcesByName(search_req));
+                list.addAll(sourcesRepository.findSourcesByName(search_req.replace(' ', '%').toLowerCase()));
                 break;
             }
             case ("author"): {
-                list.addAll(sourcesRepository.findSourcesByAuthor(search_req));
+                list.addAll(sourcesRepository.findSourcesByAuthor(search_req.replace(' ', '%').toLowerCase()));
                 break;
             }
             case ("publisher"): {
-                list.addAll(sourcesRepository.findSourcesByPublisher(search_req));
+                list.addAll(sourcesRepository.findSourcesByPublisher(search_req.replace(' ', '%').toLowerCase()));
                 break;
             }
             case ("year"): {
-                list.addAll(sourcesRepository.findSourcesByYear(Integer.parseInt(search_req)));
+                list.addAll(sourcesRepository.findSourcesByYear(search_req.replace(' ', '%').toLowerCase()));
                 break;
             }
             case ("tags"): {
-                list.addAll(sourcesRepository.findSourcesByTags(search_req));
+                list.addAll(sourcesRepository.findSourcesByTags(search_req.replace(' ', '%').toLowerCase()));
                 break;
             }
         }
@@ -53,9 +53,18 @@ public class MainController {
     @RequestMapping("/getAuthorsList")
     public @ResponseBody List<Object> getAuthorsList(){
         List<Object> authors = sourcesRepository.getAuthorsList();
-        System.out.println(authors.get(0).toString());
         return authors;
     }
 
+    @RequestMapping("/getCatalog")
+    public @ResponseBody List<Sources> getCatalog(){
+        List<Sources> sources = sourcesRepository.findAll();
+        return sources;
+    }
+    @RequestMapping("/lol")
+    public @ResponseBody List<Sources> get(){
+        List<Sources> sources = sourcesRepository.findSourcesByTags("#статья");
+        return sources;
+    }
 
 }
