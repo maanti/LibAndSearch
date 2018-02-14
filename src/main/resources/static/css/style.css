@@ -208,6 +208,7 @@ em {
 .navbar-fixed-top .container {
 /* Uncomment to make nav expand full width */
  /*	width: auto; */
+    height: auto;
 }
 .navbar .brand {
 	margin-left:0;
@@ -240,11 +241,11 @@ em {
     border-color: #f0bf00;
 }
 .navbar-wrapper {
-	overflow: auto;/* No fixed height, will break collapsible nav */
+	overflow: hidden;/* No fixed height, will break collapsible nav */
 }
+
 #menu-main {
-	overflow: auto;
-	margin-top: 1.125em;
+	margin-top: 0.5em;
 }
 ul#menu-main > li > a {
 	font-family: 'Open Sans', cursive;
@@ -253,7 +254,6 @@ ul#menu-main > li > a {
 	color: #fff;
 }
 ul#menu-main > li > a:hover {
-	overflow-scrolling: auto;
 	background: #f0bf00;
 	padding: 9px 15px;
 	border-radius: 3px;
@@ -275,7 +275,7 @@ ul#menu-main > li > a:hover {
 	background-size: cover;
 	;
 	min-height: 100%;
-	margin-top: -60px;
+	margin-top: 0px;
 	padding-top:160px;
 	text-align:center;
 }
