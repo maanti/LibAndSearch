@@ -26,23 +26,23 @@ public class MainController {
         List<Sources> list = new ArrayList<>();
         switch(filter){
             case ("name"): {
-                list.addAll(sourcesRepository.findSourcesByName(search_req));
+                list.addAll(sourcesRepository.findSourcesByName(search_req.replace(' ', '%').toLowerCase()));
                 break;
             }
             case ("author"): {
-                list.addAll(sourcesRepository.findSourcesByAuthor(search_req));
+                list.addAll(sourcesRepository.findSourcesByAuthor(search_req.replace(' ', '%').toLowerCase()));
                 break;
             }
             case ("publisher"): {
-                list.addAll(sourcesRepository.findSourcesByPublisher(search_req));
+                list.addAll(sourcesRepository.findSourcesByPublisher(search_req.replace(' ', '%').toLowerCase()));
                 break;
             }
             case ("year"): {
-                list.addAll(sourcesRepository.findSourcesByYear(search_req));
+                list.addAll(sourcesRepository.findSourcesByYear(search_req.replace(' ', '%').toLowerCase()));
                 break;
             }
             case ("tags"): {
-                list.addAll(sourcesRepository.findSourcesByTags(search_req));
+                list.addAll(sourcesRepository.findSourcesByTags(search_req.replace(' ', '%').toLowerCase()));
                 break;
             }
         }
