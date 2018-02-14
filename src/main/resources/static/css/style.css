@@ -236,15 +236,14 @@ em {
 	min-height: 4.75em;
 }
 .navbar-inverse .navbar-inner {
-	background-repeat: repeat;
-	background-color: #0b333f;
-	border-color: #f0bf00;
+    background: #0b333f repeat;
+    border-color: #f0bf00;
 }
 .navbar-wrapper {
-	overflow:hidden;/* No fixed height, will break collapsible nav */
+	overflow: auto;/* No fixed height, will break collapsible nav */
 }
 #menu-main {
-	overflow: scroll;
+	overflow: auto;
 	margin-top: 1.125em;
 }
 ul#menu-main > li > a {

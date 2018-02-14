@@ -3118,6 +3118,7 @@ button.btn.btn-mini, input[type=submit].btn.btn-mini {
 .nav-collapse.collapse {
 	height: auto;
 	overflow: visible;
+
 }
 .navbar .brand {
 	display: block;
