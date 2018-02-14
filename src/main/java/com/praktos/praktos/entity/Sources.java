@@ -8,7 +8,7 @@ public class Sources {
     private String name;
     private String author;
     private String publisher;
-    private Integer year;
+    private String year;
     private String type;
     private String link;
     private String tags;
@@ -58,11 +58,11 @@ public class Sources {
 
     @Basic
     @Column(name = "year")
-    public Integer getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(Integer year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
@@ -142,6 +142,5 @@ public class Sources {
         result = 31 * result + (path != null ? path.hashCode() : 0);
         return result;
     }
-
 
 }

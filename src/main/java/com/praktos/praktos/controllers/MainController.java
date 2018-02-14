@@ -38,7 +38,7 @@ public class MainController {
                 break;
             }
             case ("year"): {
-                list.addAll(sourcesRepository.findSourcesByYear(Integer.parseInt(search_req)));
+                list.addAll(sourcesRepository.findSourcesByYear(search_req));
                 break;
             }
             case ("tags"): {
@@ -59,6 +59,11 @@ public class MainController {
     @RequestMapping("/getCatalog")
     public @ResponseBody List<Sources> getCatalog(){
         List<Sources> sources = sourcesRepository.findAll();
+        return sources;
+    }
+    @RequestMapping("/lol")
+    public @ResponseBody List<Sources> get(){
+        List<Sources> sources = sourcesRepository.findSourcesByTags("#статья");
         return sources;
     }
 
