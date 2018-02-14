@@ -143,5 +143,11 @@ public class Sources {
         return result;
     }
 
+    @Override
+    public String toString(){
+        return "id = " + this.id +" name = " + this.name
+                + "author = "+this.author;
+    }
+
 
 }

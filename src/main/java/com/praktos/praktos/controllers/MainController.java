@@ -50,4 +50,12 @@ public class MainController {
         return list;
     }
 
+    @RequestMapping("/getAuthorsList")
+    public @ResponseBody List<Object> getAuthorsList(){
+        List<Object> authors = sourcesRepository.getAuthorsList();
+        System.out.println(authors.get(0).toString());
+        return authors;
+    }
+
+
 }
