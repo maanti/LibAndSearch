@@ -18,7 +18,13 @@ function update(){
         dataType: "json"
     });
 }
-
+function isBlank(string){
+    if (string === ""){
+        return true;
+    } else {
+        return false;
+    }
+}
 function draw(t) {
     var mainDiv = document.getElementById("main");
     var innerDiv = document.createElement("div");
@@ -27,36 +33,71 @@ function draw(t) {
 
     var li1 = document.createElement("h3");
     li1.innerHTML = "Название: ";
-    var b0 = document.createElement("b");
-    b0.innerHTML = t.name;
-    li1.appendChild(b0);
+    if (!isBlank(t.name)) {
+        var b0 = document.createElement("b");
+        b0.innerHTML = t.name;
+        li1.appendChild(b0);
+    } else {
+        var i0 = document.createElement("i");
+        i0.innerHTML = "неизвестно";
+        li1.appendChild(i0);
+    }
 
 
     var li2 = document.createElement("h3");
     li2.innerHTML ="Автор: ";
-    var b1 = document.createElement("b");
-    b1.innerHTML = t.author;
-    li2.appendChild(b1);
+    if (!isBlank(t.author)) {
+        var b1 = document.createElement("b");
+        b1.innerHTML = t.author;
+        li2.appendChild(b1);
+    } else {
+        var i1 = document.createElement("i");
+        i1.innerHTML = "неизвестно";
+        li2.appendChild(i1);
+    }
+
 
     var li3 = document.createElement("h3");
     li3.innerHTML ="Издательство: ";
-    var b2 = document.createElement("b");
-    b2.innerHTML = t.publisher;
-    li3.appendChild(b2);
+    if (!isBlank(t.publisher)) {
+        var b2 = document.createElement("b");
+        b2.innerHTML = t.publisher;
+        li3.appendChild(b2);
+    } else {
+        var i2 = document.createElement("i");
+        i2.innerHTML = "неизвестно";
+        li3.appendChild(i2);
+    }
+
 
     var li4 = document.createElement("h3");
     li4.innerHTML ="Год: ";
-    var b3 = document.createElement("b");
-    b3.innerHTML = t.year;
-    li4.appendChild(b3);
+    if (!isBlank(t.year)) {
+        var b3 = document.createElement("b");
+        b3.innerHTML = t.year;
+        li4.appendChild(b3);
+    } else {
+        var i3 = document.createElement("i");
+        i3.innerHTML = "неизвестно";
+        li4.appendChild(i3);
+    }
 
     var li5 = document.createElement("h3");
     li5.innerHTML ="Ссылка: ";
-    var b4 = document.createElement("b");
-    b4.innerHTML = t.link;
-    li5.appendChild(b4);
+    if (!isBlank(t.link)) {
+        var a = document.createElement("a");
+        a.href = t.link;
+        a.innerHTML = t.link;
+        a.target = "_blank";
+        li5.appendChild(a);
+    } else {
+        var i4 = document.createElement("i");
+        i4.innerHTML = "неизвестно";
+        li5.appendChild(i4);
+    }
 
-    div2.appendChild(li1);
+
+    /*div2.appendChild(li1);
     div2.appendChild(li2);
     div2.appendChild(li3);
     div2.appendChild(li4);
@@ -64,7 +105,14 @@ function draw(t) {
 
     innerDiv1.appendChild(div2);
     innerDiv.appendChild(innerDiv1);
-    mainDiv.appendChild(innerDiv);
+    mainDiv.appendChild(innerDiv);*/
+    div2.appendChild(li1);
+    div2.appendChild(li2);
+    div2.appendChild(li3);
+    div2.appendChild(li4);
+    div2.appendChild(li5);
+
+    mainDiv.appendChild(div2);
 }
 
 function clear() {

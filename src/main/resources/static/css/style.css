@@ -36,6 +36,7 @@ div, article, section, header, footer, nav, li {
 	content:".";
 	visibility:hidden; /* For clearing */
 }
+
 body {
 	background:#0b333f;
 	color: #0b333f;
@@ -49,6 +50,19 @@ color:#333;
 ::selection {
 background:#f0bf00;
 color:#333;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #f0bf00;
+	outline: 1px solid slategrey;
 }
 /*---------- FORMS ----------*/
 
@@ -77,8 +91,6 @@ input, button, select, textarea {
 30 / 16 = 		1.875em 		(30px equivalent)
 
 */
-
-
 
 p {
 	font-size: 1em; /* 16px */
@@ -120,6 +132,7 @@ h3 {
 	line-height: 1.3333; /* 24px */
 	margin-top: 1.3333em;
 	margin-bottom: 0em;
+	left: 2em;
 }
 h4 {
 	font-size: 1em; /* 16px */
@@ -195,6 +208,7 @@ em {
 .navbar-fixed-top .container {
 /* Uncomment to make nav expand full width */
  /*	width: auto; */
+    height: auto;
 }
 .navbar .brand {
 	margin-left:0;
@@ -223,15 +237,15 @@ em {
 	min-height: 4.75em;
 }
 .navbar-inverse .navbar-inner {
-	background-repeat: repeat;
-	background-color: #0b333f;
-	border-color: #f0bf00;
+    background: #0b333f repeat;
+    border-color: #f0bf00;
 }
 .navbar-wrapper {
-	overflow:hidden;/* No fixed height, will break collapsible nav */
+	overflow: hidden;/* No fixed height, will break collapsible nav */
 }
+
 #menu-main {
-	margin-top: 1.125em;
+	margin-top: 0.5em;
 }
 ul#menu-main > li > a {
 	font-family: 'Open Sans', cursive;
@@ -261,7 +275,7 @@ ul#menu-main > li > a:hover {
 	background-size: cover;
 	;
 	min-height: 100%;
-	margin-top: -60px;
+	margin-top: 0px;
 	padding-top:160px;
 	text-align:center;
 }
@@ -330,6 +344,7 @@ ul#menu-main > li > a:hover {
 	font-weight: normal;
 	margin: 1em 0;
 }
+
 #headerwrap #radio_buttons{
 	color: #FFFFFF;
 	font-family: 'Open Sans', cursive;
@@ -337,15 +352,38 @@ ul#menu-main > li > a:hover {
 	font-weight: normal;
 	margin: 1em 0;
 }
+
 #headerwrap #main{
-	color: #FFFFFF;
+	color: #3b798e;
 	font-family: 'Open Sans', cursive;
 	font-size: 1em;
 	font-weight: normal;
 	margin: 1em 0;
 	text-align: left;
-
 }
+
+#headerwrap #main h3{
+	width: auto;
+	position: relative;
+	left: 1em;
+	right: 1em;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#headerwrap #main div{
+	border-radius: 10px;
+	background-color: #2a5868;
+	color: rgba(227, 231, 228, 1);
+	-webkit-box-shadow: 0 1.5px 2px #3b798e;
+	-moz-box-shadow: 0 1.5px 2px #3b798e;
+	box-shadow: 0 1.5px 2px #3b798e;
+}
+#headerwrap #main div a {
+	color: dodgerblue;
+}
+
 /*========== Social Icons ==========*/
 ul.icon {
 	font-size:54px;

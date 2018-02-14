@@ -2780,7 +2780,7 @@ button.btn.btn-mini, input[type=submit].btn.btn-mini {
 	margin-top: 5px;
 }
 .nav {
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 	margin-left: 0;
 	list-style: none;
 }
@@ -3118,6 +3118,7 @@ button.btn.btn-mini, input[type=submit].btn.btn-mini {
 .nav-collapse.collapse {
 	height: auto;
 	overflow: visible;
+
 }
 .navbar .brand {
 	display: block;
