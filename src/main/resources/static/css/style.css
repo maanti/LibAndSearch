@@ -384,6 +384,7 @@ ul#menu-main > li > a:hover {
 }
 #headerwrap #main div a {
 	color: dodgerblue;
+	display: block;
 }
 
 /*========== Social Icons ==========*/

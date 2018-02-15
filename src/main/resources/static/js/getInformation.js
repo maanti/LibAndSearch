@@ -1,3 +1,11 @@
+document.onkeyup = function (e) {
+    e = e || window.event;
+    if (e.keyCode === 13) {
+        update();
+    }
+    return false;
+};
+
 function update(){
     $.ajax({
         url:"/findBook",
@@ -13,17 +21,10 @@ function update(){
                     draw(t);
                 })
             }
-            else document.getElementById("main").innerHTML= "Ничего не найдено по запросу";
+            else document.getElementById("main").innerHTML = "Ничего не найдено по запросу";
         },
         dataType: "json"
     });
-}
-function isBlank(string){
-    if (string === ""){
-        return true;
-    } else {
-        return false;
-    }
 }
 function draw(t) {
 
@@ -32,7 +33,7 @@ function draw(t) {
 
     var li1 = document.createElement("h3");
     li1.innerHTML = "Название: ";
-    if (t[0].length!=0) {
+    if (t[0].length!==0) {
         var b0 = document.createElement("b");
         b0.innerHTML = t[0];
         li1.appendChild(b0);
@@ -45,7 +46,7 @@ function draw(t) {
 
     var li2 = document.createElement("h3");
     li2.innerHTML ="Автор: ";
-    if (t[1].length!=0) {
+    if (t[1].length!==0) {
         var b1 = document.createElement("b");
         b1.innerHTML = t[1];
         li2.appendChild(b1);
@@ -58,7 +59,7 @@ function draw(t) {
 
     var li3 = document.createElement("h3");
     li3.innerHTML ="Издательство: ";
-    if (t[2].length!=0) {
+    if (t[2].length!==0) {
         var b2 = document.createElement("b");
         b2.innerHTML = t[2];
         li3.appendChild(b2);
@@ -82,11 +83,10 @@ function draw(t) {
     }
 
     var li5 = document.createElement("h3");
-    li5.innerHTML ="Ссылка: ";
-    if (t[5].length!=0) {
+    if (t[5].length!==0) {
         var a = document.createElement("a");
         a.href = t[5];
-        a.innerHTML = t[5];
+        a.innerHTML = "Открыть";
         a.target = "_blank";
         li5.appendChild(a);
     } else {
