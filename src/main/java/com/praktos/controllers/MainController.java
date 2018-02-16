@@ -1,7 +1,7 @@
-package com.praktos.praktos.controllers;
+package com.praktos.controllers;
 
-import com.praktos.praktos.entity.Sources;
-import com.praktos.praktos.repository.SourcesRepository;
+import com.praktos.entity.Sources;
+import com.praktos.repository.SourcesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

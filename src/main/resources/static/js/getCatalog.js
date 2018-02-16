@@ -6,9 +6,9 @@ function update(){
         type: "POST",
         success: function (data) {
             clear();
-            if(data.length>0) {
+            if(data.length > 0) {
                 data.forEach(function (t) {
-                    if(t.length != 0)
+                    if(t.length !== 0)
                         draw(t);
                 })
             }
@@ -17,24 +17,17 @@ function update(){
         dataType: "json"
     });
 }
-function isBlank(string){
-    if (string === ""){
-        return true;
-    } else {
-        return false;
-    }
-}
+
 function draw(t) {
+
     var mainDiv = document.getElementById("main");
-    var innerDiv = document.createElement("div");
-    var innerDiv1 = document.createElement("div");
     var div2 = document.createElement("div");
 
     var li1 = document.createElement("h3");
     li1.innerHTML = "Название: ";
-    if (!isBlank(t.name)) {
+    if (t[0].length!==0) {
         var b0 = document.createElement("b");
-        b0.innerHTML = t.name;
+        b0.innerHTML = t[0];
         li1.appendChild(b0);
     } else {
         var i0 = document.createElement("i");
@@ -45,9 +38,9 @@ function draw(t) {
 
     var li2 = document.createElement("h3");
     li2.innerHTML ="Автор: ";
-    if (!isBlank(t.author)) {
+    if (t[1].length!==0) {
         var b1 = document.createElement("b");
-        b1.innerHTML = t.author;
+        b1.innerHTML = t[1];
         li2.appendChild(b1);
     } else {
         var i1 = document.createElement("i");
@@ -58,9 +51,9 @@ function draw(t) {
 
     var li3 = document.createElement("h3");
     li3.innerHTML ="Издательство: ";
-    if (!isBlank(t.publisher)) {
+    if (t[2].length!==0) {
         var b2 = document.createElement("b");
-        b2.innerHTML = t.publisher;
+        b2.innerHTML = t[2];
         li3.appendChild(b2);
     } else {
         var i2 = document.createElement("i");
@@ -71,9 +64,9 @@ function draw(t) {
 
     var li4 = document.createElement("h3");
     li4.innerHTML ="Год: ";
-    if (!isBlank(t.year)) {
+    if (t[3]!=null) {
         var b3 = document.createElement("b");
-        b3.innerHTML = t.year;
+        b3.innerHTML = t[3];
         li4.appendChild(b3);
     } else {
         var i3 = document.createElement("i");
@@ -82,11 +75,10 @@ function draw(t) {
     }
 
     var li5 = document.createElement("h3");
-    li5.innerHTML ="Ссылка: ";
-    if (!isBlank(t.link)) {
+    if (t[5].length!==0) {
         var a = document.createElement("a");
-        a.href = t.link;
-        a.innerHTML = t.link;
+        a.href = t[5];
+        a.innerHTML = "Открыть";
         a.target = "_blank";
         li5.appendChild(a);
     } else {
@@ -95,16 +87,6 @@ function draw(t) {
         li5.appendChild(i4);
     }
 
-
-    /*div2.appendChild(li1);
-    div2.appendChild(li2);
-    div2.appendChild(li3);
-    div2.appendChild(li4);
-    div2.appendChild(li5);
-
-    innerDiv1.appendChild(div2);
-    innerDiv.appendChild(innerDiv1);
-    mainDiv.appendChild(innerDiv);*/
     div2.appendChild(li1);
     div2.appendChild(li2);
     div2.appendChild(li3);
