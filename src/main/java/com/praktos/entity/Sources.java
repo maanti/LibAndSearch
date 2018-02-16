@@ -1,4 +1,4 @@
-package com.praktos.praktos.entity;
+package com.praktos.entity;
 
 import javax.persistence.*;
 
