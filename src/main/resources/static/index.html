@@ -28,7 +28,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
-                <h1 class="brand"><a href="#top">sprc.w.pw</a></h1>
+                <h1 class="brand"><a href=".">sprc.w.pw</a></h1>
                 <nav class="pull-right nav-collapse collapse">
                     <ul id="menu-main" class="nav">
                         <li><a title="catalog" href="/catalog">Каталог</a></li>
@@ -51,7 +51,7 @@
         <div class="container">
             <div class="row">
                 <div class="span12">
-                    <input type="text" id="search_req" name="search_req" placeholder="speech recognition..." class="cform-text" size="40" title="search_req">
+                    <input type="text" id="search_req" name="search_req" placeholder="speech recognition..." class="cform-text" size="40" title="search_req" onkeyup="function pressEnter(event){if(event.keyCode == 13) update()}">
                     <input type="button" onclick="update()" value="Найти" class="cform-submit"><br>
                     <div id="radio_buttons">
                         <input type="radio" name="filter" id="name_filter" value="name" checked>&nbsp;По названию&nbsp;&nbsp;
@@ -60,23 +60,7 @@
                         <input type="radio" name="filter" id="year_filter" value="year">&nbsp;По году&nbsp;&nbsp;
                         <input type="radio" name="filter" id="tag_filter" value="tags">&nbsp;По тегам&nbsp;&nbsp;
                     </div>
-                    <!--<table cellspacing="2">-->
-                    <!--&lt;!&ndash;<thead>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<th>Название книги</th>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<th>Автор</th>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<th>Издательство</th>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</thead>&ndash;&gt;-->
-
-                    <!--&lt;!&ndash;<tbody id="tbody">&ndash;&gt;-->
-
-                    <!--&lt;!&ndash;</tbody>&ndash;&gt;-->
-                    <!--</table>-->
-                    <div id="main">
-
-                    </div>
-
+                    <div id="main"></div>
                 </div>
             </div>
         </div>

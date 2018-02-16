@@ -276,7 +276,7 @@ ul#menu-main > li > a:hover {
 	;
 	min-height: 100%;
 	margin-top: 0px;
-	padding-top:160px;
+	padding-top:0px;
 	text-align:center;
 }
 #headerwrap h1 {
@@ -379,9 +379,12 @@ ul#menu-main > li > a:hover {
 	-webkit-box-shadow: 0 1.5px 2px #3b798e;
 	-moz-box-shadow: 0 1.5px 2px #3b798e;
 	box-shadow: 0 1.5px 2px #3b798e;
+	padding-bottom: 5px;
+	padding-top: auto;
 }
 #headerwrap #main div a {
 	color: dodgerblue;
+	display: block;
 }
 
 /*========== Social Icons ==========*/
