@@ -56,6 +56,18 @@ public class MainController {
         return authors;
     }
 
+    @RequestMapping("/getPublishersList")
+    public @ResponseBody List<Object> getPublishersList(){
+        List<Object> publishers = sourcesRepository.getPublishersList();
+        return publishers;
+    }
+
+    @RequestMapping("/getYearsList")
+    public @ResponseBody List<Object> getYearsList(){
+        List<Object> years = sourcesRepository.getYearsList();
+        return years;
+    }
+
     @RequestMapping("/getCatalog")
     public @ResponseBody List<Sources> getCatalog(){
         List<Sources> sources = sourcesRepository.findAll();

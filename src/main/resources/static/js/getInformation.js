@@ -33,7 +33,7 @@ function draw(t) {
 
     var li1 = document.createElement("h3");
     li1.innerHTML = "Название: ";
-    if (t[0].length!==0) {
+    if ((t[0]!==null)) {
         var b0 = document.createElement("b");
         b0.innerHTML = t[0];
         li1.appendChild(b0);
@@ -46,7 +46,7 @@ function draw(t) {
 
     var li2 = document.createElement("h3");
     li2.innerHTML ="Автор: ";
-    if (t[1].length!==0) {
+    if ((t[1]!==null)) {
         var b1 = document.createElement("b");
         b1.innerHTML = t[1];
         li2.appendChild(b1);
@@ -59,7 +59,7 @@ function draw(t) {
 
     var li3 = document.createElement("h3");
     li3.innerHTML ="Издательство: ";
-    if (t[2].length!==0) {
+    if ((t[2]!==null)) {
         var b2 = document.createElement("b");
         b2.innerHTML = t[2];
         li3.appendChild(b2);
@@ -72,7 +72,7 @@ function draw(t) {
 
     var li4 = document.createElement("h3");
     li4.innerHTML ="Год: ";
-    if (t[3]!=null) {
+    if ((t[3]!==null)) {
         var b3 = document.createElement("b");
         b3.innerHTML = t[3];
         li4.appendChild(b3);
@@ -83,7 +83,7 @@ function draw(t) {
     }
 
     var li5 = document.createElement("h3");
-    if (t[5].length!==0) {
+    if ((t[5]!==null)) {
         var a = document.createElement("a");
         a.href = t[5];
         a.innerHTML = "Открыть";

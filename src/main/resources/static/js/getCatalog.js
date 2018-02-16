@@ -86,7 +86,7 @@ function draw(t) {
     if (!isBlank(t.link)) {
         var a = document.createElement("a");
         a.href = t.link;
-        a.innerHTML = t.link;
+        a.innerHTML = "Открыть";
         a.target = "_blank";
         li5.appendChild(a);
     } else {

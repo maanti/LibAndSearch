@@ -9,6 +9,9 @@ import java.util.List;
 
 public interface SourcesRepository extends CrudRepository<Sources,Integer> {
 
+    @Query(value = "select name, author, publisher, year, type, link, path, tags from Sources where lower(name) like concat('%', :name, '%') ")
+    List<Sources> findSourcesByName(@Param("name") String name);
+
     @Query(value = "select name, author, publisher, year, type, link, path, tags from Sources where lower(author) like concat('%', :author, '%') ")
     List<Sources> findSourcesByAuthor(@Param("author") String author);
 
@@ -26,7 +29,9 @@ public interface SourcesRepository extends CrudRepository<Sources,Integer> {
     @Query("select distinct author from Sources ORDER BY author")
     List<Object> getAuthorsList();
 
-    @Query(value = "select name, author, publisher, year, type, link, path, tags from Sources where lower(name) like concat('%', :name, '%') ")
-    List<Sources> findSourcesByName(@Param("name") String name);
+    @Query("select distinct publisher from Sources ORDER BY publisher")
+    List<Object> getPublishersList();
 
+    @Query("select distinct year from Sources ORDER BY year")
+    List<Object> getYearsList();
 }
