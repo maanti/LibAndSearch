@@ -1,6 +1,6 @@
-package com.praktos.praktos.repository;
+package com.praktos.repository;
 
-import com.praktos.praktos.entity.Sources;
+import com.praktos.entity.Sources;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

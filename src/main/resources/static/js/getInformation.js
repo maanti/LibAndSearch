@@ -72,7 +72,7 @@ function draw(t) {
 
     var li4 = document.createElement("h3");
     li4.innerHTML ="Год: ";
-    if (t.year.length != 0) {
+    if (t.year != null) {
         var b3 = document.createElement("b");
         b3.innerHTML = t.year;
         li4.appendChild(b3);

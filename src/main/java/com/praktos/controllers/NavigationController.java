@@ -1,4 +1,4 @@
-package com.praktos.praktos.controllers;
+package com.praktos.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
