@@ -372,6 +372,18 @@ ul#menu-main > li > a:hover {
 	overflow: hidden;
 }
 
+#headerwrap #main h4{
+	margin-top: 1em;
+	font-size: 1.3em;
+	width: auto;
+	position: relative;
+	left: 1em;
+	right: 1em;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
 #headerwrap #main div{
 	border-radius: 10px;
 	background-color: #2a5868;

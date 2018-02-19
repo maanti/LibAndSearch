@@ -23,7 +23,7 @@ function draw(t) {
     var mainDiv = document.getElementById("main");
     var div2 = document.createElement("div");
 
-    var li1 = document.createElement("h3");
+    var li1 = document.createElement("h4");
     li1.innerHTML = "Название: ";
     if (t.name.length!=0) {
         var b0 = document.createElement("b");
