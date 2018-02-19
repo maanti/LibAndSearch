@@ -18,11 +18,13 @@ public interface SourcesRepository extends JpaRepository<Sources,Integer> {
     @Query(value = "(select id, name, author, publisher, year, type, link, path, tags from Sources where lower(publisher) like concat('%', :publisher, '%')) union (select id, name, author, publisher, year, type, link, path, tags from Sources where similarity(publisher, :publisher)>0.1)", nativeQuery = true)
     List<Sources> findSourcesByPublisher(@Param("publisher") String publisher);
 
-    @Query(value = "(select id, name, author, publisher, year, type, link, path, tags from Sources where lower(year) like concat('%', :year, '%')) union (select id, name, author, publisher, year, type, link, path, tags from Sources where similarity(year, :year)>0.1)", nativeQuery = true)
-    List<Sources> findSourcesByYear(@Param("year") String year);
+    @Query(value = "select id, name, author, publisher, year, type, link, path, tags from Sources where year = :year", nativeQuery = true)
+    List<Sources> findSourcesByYear(@Param("year") int year);
 
     @Query(value = "(select id, name, author, publisher, year, type, link, path, tags from Sources where lower(tags) like concat('%', :tags, '%')) union (select id, name, author, publisher, year, type, link, path, tags from Sources where similarity(tags, :tags)>0.1)", nativeQuery = true)
     List<Sources> findSourcesByTags(@Param("tags") String tags);
+
+    List<Sources> findSourcesById(Integer id);
 
     List<Sources> findAll();
 
