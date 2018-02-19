@@ -26,6 +26,7 @@ function update(){
         dataType: "json"
     });
 }
+
 function draw(t) {
 
     var mainDiv = document.getElementById("main");
