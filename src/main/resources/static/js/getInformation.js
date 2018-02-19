@@ -33,9 +33,9 @@ function draw(t) {
 
     var li1 = document.createElement("h3");
     li1.innerHTML = "Название: ";
-    if ((t[0]!==null)) {
+    if (t.name.length != 0) {
         var b0 = document.createElement("b");
-        b0.innerHTML = t[0];
+        b0.innerHTML = t.name;
         li1.appendChild(b0);
     } else {
         var i0 = document.createElement("i");
@@ -46,9 +46,9 @@ function draw(t) {
 
     var li2 = document.createElement("h3");
     li2.innerHTML ="Автор: ";
-    if ((t[1]!==null)) {
+    if (t.author.length != 0) {
         var b1 = document.createElement("b");
-        b1.innerHTML = t[1];
+        b1.innerHTML = t.author;
         li2.appendChild(b1);
     } else {
         var i1 = document.createElement("i");
@@ -59,9 +59,9 @@ function draw(t) {
 
     var li3 = document.createElement("h3");
     li3.innerHTML ="Издательство: ";
-    if ((t[2]!==null)) {
+    if (t.publisher.length != 0) {
         var b2 = document.createElement("b");
-        b2.innerHTML = t[2];
+        b2.innerHTML = t.publisher;
         li3.appendChild(b2);
     } else {
         var i2 = document.createElement("i");
@@ -72,9 +72,9 @@ function draw(t) {
 
     var li4 = document.createElement("h3");
     li4.innerHTML ="Год: ";
-    if ((t[3]!==null)) {
+    if (t.year != null) {
         var b3 = document.createElement("b");
-        b3.innerHTML = t[3];
+        b3.innerHTML = t.year;
         li4.appendChild(b3);
     } else {
         var i3 = document.createElement("i");
@@ -83,9 +83,9 @@ function draw(t) {
     }
 
     var li5 = document.createElement("h3");
-    if ((t[5]!==null)) {
+    if (t.link.length != 0) {
         var a = document.createElement("a");
-        a.href = t[5];
+        a.href = t.link;
         a.innerHTML = "Открыть";
         a.target = "_blank";
         li5.appendChild(a);

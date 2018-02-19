@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Controller
 public class MainController {
@@ -23,26 +22,28 @@ public class MainController {
     List<Sources> findBook(@RequestParam("search_req") String search_req,
                            @RequestParam("filter") String filter)
     {
-        List<Sources> list = new ArrayList<>();
+    List<Sources> list = new ArrayList<>();
+
+
         switch(filter){
             case ("name"): {
-                list.addAll(sourcesRepository.findSourcesByName(search_req.replace(' ', '%').toLowerCase()));
+               list.addAll(sourcesRepository.findSourcesByName(search_req));
                 break;
             }
             case ("author"): {
-                list.addAll(sourcesRepository.findSourcesByAuthor(search_req.replace(' ', '%').toLowerCase()));
+                list.addAll(sourcesRepository.findSourcesByAuthor(search_req));
                 break;
             }
             case ("publisher"): {
-                list.addAll(sourcesRepository.findSourcesByPublisher(search_req.replace(' ', '%').toLowerCase()));
+                list.addAll(sourcesRepository.findSourcesByPublisher(search_req));
                 break;
             }
             case ("year"): {
-                list.addAll(sourcesRepository.findSourcesByYear(search_req.replace(' ', '%').toLowerCase()));
+                list.addAll(sourcesRepository.findSourcesByYear(search_req));
                 break;
             }
             case ("tags"): {
-                list.addAll(sourcesRepository.findSourcesByTags(search_req.replace(' ', '%').toLowerCase()));
+                list.addAll(sourcesRepository.findSourcesByTags(search_req));
                 break;
             }
         }
@@ -71,11 +72,6 @@ public class MainController {
     @RequestMapping("/getCatalog")
     public @ResponseBody List<Sources> getCatalog(){
         List<Sources> sources = sourcesRepository.findAll();
-        return sources;
-    }
-    @RequestMapping("/lol")
-    public @ResponseBody List<Sources> get(){
-        List<Sources> sources = sourcesRepository.findSourcesByTags("#статья");
         return sources;
     }
 

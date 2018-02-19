@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
 @Controller
 public class NavigationController {
 
@@ -14,12 +15,6 @@ public class NavigationController {
         return model;
     }
 
-    @RequestMapping(value = "/kek")
-    public ModelAndView getAuthorsList() {
-        ModelAndView model = new ModelAndView();
-        model.setViewName("../static/authors");
-        return model;
-    }
 
     @RequestMapping(value = "/authors")
     public ModelAndView getAuthors() {
