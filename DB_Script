@@ -8,7 +8,7 @@ CREATE TABLE sources
   name      VARCHAR,
   author    VARCHAR,
   publisher VARCHAR,
-  year      VARCHAR,
+  year      INTEGER,
   type      VARCHAR,
   link      VARCHAR,
   path      VARCHAR,
