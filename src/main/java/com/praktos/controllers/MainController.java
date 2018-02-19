@@ -2,13 +2,20 @@ package com.praktos.controllers;
 
 import com.praktos.entity.Sources;
 import com.praktos.repository.SourcesRepository;
+import com.praktos.tikoLuceneSearch.Searcher;
+import com.praktos.tikoLuceneSearch.index.DocumentIndexer;
+import com.praktos.tikoLuceneSearch.index.FileToLuceneDocument;
+import org.apache.lucene.document.Document;
+import org.apache.tika.exception.TikaException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.xml.sax.SAXException;
 
+import java.io.IOException;
 import java.util.*;
 
 @Controller
@@ -16,14 +23,23 @@ public class MainController {
 
     @Autowired
     private SourcesRepository sourcesRepository;
+    private Searcher search;
+    public MainController(){
+    }
 
     @RequestMapping(value = "/findBook", method = RequestMethod.POST)
     public @ResponseBody
     List<Sources> findBook(@RequestParam("search_req") String search_req,
-                           @RequestParam("filter") String filter)
-    {
+                           @RequestParam("filter") String filter) throws IOException, TikaException, SAXException {
     List<Sources> list = new ArrayList<>();
-
+        List<Sources> sources = sourcesRepository.findSourcesById(2);
+        List<Document> documents = new ArrayList<>();
+        documents.add(FileToLuceneDocument.createWith(sources.get(0)));
+        sources.clear();
+        sources = sourcesRepository.findSourcesById(4);
+        documents.add(FileToLuceneDocument.createWith(sources.get(0)));
+        DocumentIndexer indexer = new DocumentIndexer();
+        indexer.index(false, documents);
 
         switch(filter){
             case ("name"): {
@@ -39,12 +55,23 @@ public class MainController {
                 break;
             }
             case ("year"): {
-                list.addAll(sourcesRepository.findSourcesByYear(search_req));
+                list.addAll(sourcesRepository.findSourcesByYear(Integer.parseInt(search_req)));
                 break;
             }
             case ("tags"): {
                 list.addAll(sourcesRepository.findSourcesByTags(search_req));
                 break;
+            }
+            case ("file"): {
+                try {
+                    search = new Searcher(indexer.readIndex());
+                    list.addAll(search.fuzzySearch(search_req));
+                    break;
+                } catch (IOException e) {
+                    System.err.println("IOException in MainController: ");
+                    e.printStackTrace();
+                    break;
+                }
             }
         }
 
@@ -53,8 +80,7 @@ public class MainController {
 
     @RequestMapping("/getAuthorsList")
     public @ResponseBody List<Object> getAuthorsList(){
-        List<Object> authors = sourcesRepository.getAuthorsList();
-        return authors;
+        return sourcesRepository.getAuthorsList();
     }
 
     @RequestMapping("/getPublishersList")
@@ -71,8 +97,8 @@ public class MainController {
 
     @RequestMapping("/getCatalog")
     public @ResponseBody List<Sources> getCatalog(){
-        List<Sources> sources = sourcesRepository.findAll();
-        return sources;
+        return sourcesRepository.findAll();
     }
+
 
 }

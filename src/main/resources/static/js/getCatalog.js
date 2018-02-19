@@ -25,7 +25,7 @@ function draw(t) {
 
     var li1 = document.createElement("h4");
     li1.innerHTML = "Название: ";
-    if (t.name.length!=0) {
+    if (t.name.length!==0) {
         var b0 = document.createElement("b");
         b0.innerHTML = t.name;
         li1.appendChild(b0);
