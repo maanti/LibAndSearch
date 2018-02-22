@@ -32,15 +32,6 @@ public class MainController {
     List<Sources> findBook(@RequestParam("search_req") String search_req,
                            @RequestParam("filter") String filter) throws IOException, TikaException, SAXException {
     List<Sources> list = new ArrayList<>();
-//        List<Sources> sources = sourcesRepository.findSourcesById(2);
-//        List<Document> documents = new ArrayList<>();
-//        documents.add(FileToLuceneDocument.createWith(sources.get(0)));
-//        sources.clear();
-//        sources = sourcesRepository.findSourcesById(4);
-//        documents.add(FileToLuceneDocument.createWith(sources.get(0)));
-//        DocumentIndexer indexer = new DocumentIndexer();
-//        indexer.index(false, documents);
-
         switch(filter){
             case ("name"): {
                list.addAll(sourcesRepository.findSourcesByName(search_req));
@@ -62,17 +53,40 @@ public class MainController {
                 list.addAll(sourcesRepository.findSourcesByTags(search_req));
                 break;
             }
-//            case ("file"): {
-//                try {
-//                    search = new Searcher(indexer.readIndex());
-//                    list.addAll(search.fuzzySearch(search_req));
-//                    break;
-//                } catch (IOException e) {
-//                    System.err.println("IOException in MainController: ");
-//                    e.printStackTrace();
-//                    break;
-//                }
-//            }
+            case ("file"): {
+                List<Sources> sources = sourcesRepository.findSourcesById(2);
+                List<Document> documents = new ArrayList<>();
+                documents.add(FileToLuceneDocument.createWith(sources.get(0)));
+                sources = sourcesRepository.findSourcesById(3);
+                documents.add(FileToLuceneDocument.createWith(sources.get(0)));
+                sources = sourcesRepository.findSourcesById(4);
+                documents.add(FileToLuceneDocument.createWith(sources.get(0)));
+                sources = sourcesRepository.findSourcesById(5);
+                documents.add(FileToLuceneDocument.createWith(sources.get(0)));
+                sources = sourcesRepository.findSourcesById(6);
+                documents.add(FileToLuceneDocument.createWith(sources.get(0)));
+                sources = sourcesRepository.findSourcesById(8);
+                documents.add(FileToLuceneDocument.createWith(sources.get(0)));
+                sources = sourcesRepository.findSourcesById(10);
+                documents.add(FileToLuceneDocument.createWith(sources.get(0)));
+                sources = sourcesRepository.findSourcesById(11);
+                documents.add(FileToLuceneDocument.createWith(sources.get(0)));
+                sources = sourcesRepository.findSourcesById(13);
+                documents.add(FileToLuceneDocument.createWith(sources.get(0)));
+                sources = sourcesRepository.findSourcesById(14);
+                documents.add(FileToLuceneDocument.createWith(sources.get(0)));
+                DocumentIndexer indexer = new DocumentIndexer();
+                indexer.index(false, documents);
+                try {
+                    search = new Searcher(indexer.readIndex());
+                    list.addAll(search.fuzzySearch(search_req));
+                    break;
+                } catch (IOException e) {
+                    System.err.println("IOException in MainController: ");
+                    e.printStackTrace();
+                    break;
+                }
+            }
         }
 
         return list;
