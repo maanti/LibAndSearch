@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Userr {
+public class User {
     private int id;
     private String firstname;
     private String lastname;
@@ -68,13 +68,13 @@ public class Userr {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Userr userr = (Userr) o;
+        User user = (User) o;
 
-        if (id != userr.id) return false;
-        if (firstname != null ? !firstname.equals(userr.firstname) : userr.firstname != null) return false;
-        if (lastname != null ? !lastname.equals(userr.lastname) : userr.lastname != null) return false;
-        if (username != null ? !username.equals(userr.username) : userr.username != null) return false;
-        if (password != null ? !password.equals(userr.password) : userr.password != null) return false;
+        if (id != user.id) return false;
+        if (firstname != null ? !firstname.equals(user.firstname) : user.firstname != null) return false;
+        if (lastname != null ? !lastname.equals(user.lastname) : user.lastname != null) return false;
+        if (username != null ? !username.equals(user.username) : user.username != null) return false;
+        if (password != null ? !password.equals(user.password) : user.password != null) return false;
 
         return true;
     }

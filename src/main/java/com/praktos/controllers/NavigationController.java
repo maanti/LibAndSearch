@@ -55,14 +55,14 @@ public class NavigationController {
     @RequestMapping(value = "/login")
     public ModelAndView login() {
         ModelAndView model = new ModelAndView();
-        model.setViewName("../static/autorization");
+        model.setViewName("../static/authorization");
         return model;
     }
 
-    @RequestMapping(value = "/signin")
-    public ModelAndView signin() {
+    @RequestMapping(value = "/signIn")
+    public ModelAndView signIn() {
         ModelAndView model = new ModelAndView();
-        model.setViewName("../static/meow");
+        model.setViewName("../static/index");
         return model;
     }
 

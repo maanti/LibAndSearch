@@ -32,66 +32,76 @@
         <div class="login-form">
 
 
-            <form id="authorizationForm" method="post" action= "/signin">
-                <!--см signin в Navigation Controller-->
+
+
+
+            <form id="authorizationForm" method="POST" onsubmit="checkInput()" action= "/signIn">
+                <!--см signIn в Navigation Controller-->
                 <div class="sign-in-htm">
                     <div class="group">
-                        <label for="username" class="label" id="userLabel">Логин</label>
-                        <input id="username" type="text" class="w3-input" name="username" required="true" placeholder="Введите имя пользователя"
-                               maxlength="20">
-                        <label for="username" style="color: transparent" id="AenterEmail">Заполните это поле!</label>
+                        <label for="usernameSignIn" class="label" id="userLabel">Логин</label>
+                        <input id="usernameSignIn" type="text" class="w3-input" name="username" required placeholder="Введите имя пользователя" maxlength="30">
+                        <!--<label for="username" style="color: transparent" id="AenterEmail">Заполните это поле!</label>-->
                     </div>
                     <div class="group">
-                        <label for="password" class="label">Пароль</label>
-                        <input id="password" type="password" class="w3-input" data-type="password" required="true"
-                               name="password" placeholder="Введите пароль" maxlength="20">
-                        <label for="password" style="color: transparent" id="AincorrectPassword">Заполните это поле!</label>
+                        <label for="passwordSignIn" class="label">Пароль</label>
+                        <input id="passwordSignIn" type="password" class="w3-input" data-type="password" required name="password" placeholder="Введите пароль" maxlength="30">
+                        <!--<label for="password" style="color: transparent" id="AincorrectPassword">Заполните это поле!</label>-->
                     </div>
                     <div class="group">
-                        <input type="button" class="w3-button w3-middle w3-theme" value="Войти" id="AsubmitButton" onclick="checkInput()">
-                        <label for="AsubmitButton" style="color: transparent" id="notResult">Такого пользователя нет</label>
+                        <input type="submit" class="w3-button w3-middle w3-theme" value="Войти" id="submitSignIn">
+                        <!--<label for="AsubmitButton" style="color: transparent" id="notResult">Такого пользователя нет</label>-->
 
                     </div>
-                    <div class="hr">
-                        <label id="error" style="color: red"></label>
-                    </div>
-                    <div class="foot-lnk">
-                        <a href="/reset" id="a">Забыли пароль?</a>
-                    </div>
-
+                    <!--<div class="hr">-->
+                        <!--<label id="error" style="color: red"></label>-->
+                    <!--</div>-->
+                    <!--<div class="foot-lnk">-->
+                        <!--<a href="/reset" id="a">Забыли пароль?</a>-->
+                    <!--</div>-->
                 </div>
-
-
             </form>
-            <form id="registrationForm" method="get" action="/sendCode">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <form id="registrationForm" method="POST" action="/signUp">
                 <div class="sign-up-htm" id="signUp">
                     <div class="group">
-                        <label for="userName" class="label"> Имя</label>
-                        <input id="usesssrName" type="text" class="w3-input" name="name" placeholder="Ваше имя"
-                               onclick="noErrorRname()" maxlength="20">
-                        <label for="userName" style="color: transparent" id="enterName">Заполните это поле!</label>
+                        <label for="userNameSignUp" class="label"> Имя</label>
+                        <input id="userNameSignUp" type="text" class="w3-input" name="name" placeholder="Ваше имя" maxlength="20"/>
+                        <!--<label for="userNameSignUp" style="color: transparent" id="enterName">Заполните это поле!</label>-->
                     </div>
                     <div class="group">
-                        <label for="userLastName" class="label">Фамилия</label>
-                        <input id="userLastName" type="text" class="w3-input" name="lastname"
-                               placeholder="Your lastname" maxlength="20">
-                        <label for="userLastName" style="color: transparent">lol</label>
+                        <label for="userLastNameSignUp" class="label">Фамилия</label>
+                        <input id="userLastNameSignUp" type="text" class="w3-input" name="lastName" placeholder="Your last name" maxlength="20">
+                        <!--<label for="userLastNameSignUp" style="color: transparent">lol</label>-->
                     </div>
                     <div class="group">
-                        <label for="eMail" class="label">E-mail</label>
-                        <input id="eMail" type="text" class="w3-input" name="e-mail" required="true"
-                               placeholder="Ваш E-mail" onclick="noErrorReMail()" maxlength="20">
-                        <output for="eMail" style="color: red" id="existEmail"></output>
-                        <label for="eMail" style="color: transparent" id="incorrectEMail">некорректный E-mail!</label>
+                        <label for="eMailSignUp" class="label">E-mail</label>
+                        <input id="eMailSignUp" type="text" class="w3-input" name="e-mail" required placeholder="Ваш E-mail" maxlength="20"/>
+                        <!--<output for="eMailSignUp" style="color: red" id="existEmail"></output>-->
+                        <!--<label for="eMail" style="color: transparent" id="incorrectEMail">некорректный E-mail!</label>-->
                     </div>
                     <div class="group">
-                        <label for="password" class="label">Придумайте пароль</label>
-                        <input id="passwtttord" type="password" class="w3-input" required="true" name="password"
-                               placeholder="пароль" onclick="noErrorRpassword()" maxlength="20">
-                        <label for="password" style="color: transparent" id="enterPassword">Заполните это поле!</label>
+                        <label for="passwordSignUp" class="label">Придумайте пароль</label>
+                        <input id="passwordSignUp" type="password" class="w3-input" required name="password" placeholder="пароль" maxlength="20">
+                        <!--<label for="password" style="color: transparent" id="enterPassword">Заполните это поле!</label>-->
                     </div>
                     <div class="group">
-                        <input type="button" class="w3-button w3-middle w3-theme" value="Зарегистрироваться" id="submitButton" onclick="ValidateEmail()">
+                        <input type="submit" class="w3-button w3-middle w3-theme" value="Зарегистрироваться" id="submitRegistration"/>
 
                     </div>
                 </div>

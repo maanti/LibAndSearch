@@ -1,13 +1,11 @@
 package com.praktos.repository;
 
-import com.praktos.entity.Userr;
-import org.springframework.data.jpa.repository.Query;
+import com.praktos.entity.User;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface UserRepository extends CrudRepository<Userr,Integer> {
+public interface UserRepository extends CrudRepository<User,Integer> {
 
-    List<Userr> findUserrByUsernameAndPassword(String username, String password);
+    List<User> findUserByUsernameAndPassword(String username, String password);
 }

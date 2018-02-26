@@ -1,7 +1,7 @@
 package com.praktos.controllers;
 
 import com.praktos.entity.Sources;
-import com.praktos.entity.Userr;
+import com.praktos.entity.User;
 import com.praktos.repository.SourcesRepository;
 import com.praktos.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +16,15 @@ import java.util.*;
 @Controller
 public class MainController {
 
-    @Autowired
-    private SourcesRepository sourcesRepository;
+    private final SourcesRepository sourcesRepository;
+
+    private final UserRepository userRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    public MainController(SourcesRepository sourcesRepository, UserRepository userRepository) {
+        this.sourcesRepository = sourcesRepository;
+        this.userRepository = userRepository;
+    }
 
     @RequestMapping(value = "/findBook", method = RequestMethod.POST)
     public @ResponseBody
@@ -44,7 +48,7 @@ public class MainController {
                 break;
             }
             case ("year"): {
-                list.addAll(sourcesRepository.findSourcesByYear(search_req));
+                list.addAll(sourcesRepository.findSourcesByYear(Integer.parseInt(search_req)));
                 break;
             }
             case ("tags"): {
@@ -58,21 +62,18 @@ public class MainController {
 
     @RequestMapping("/getAuthorsList")
     public @ResponseBody List<Object> getAuthorsList(){
-        List<Object> authors = sourcesRepository.getAuthorsList();
-        return authors;
+        return sourcesRepository.getAuthorsList();
     }
 
     @RequestMapping("/getCatalog")
     public @ResponseBody List<Sources> getCatalog(){
-        List<Sources> sources = sourcesRepository.findAll();
-        return sources;
+        return sourcesRepository.findAll();
     }
 
     @RequestMapping("/getUsers")
-    public @ResponseBody List<Userr> getUsers(@RequestParam("username") String username,
+    public @ResponseBody List<User> getUsers(@RequestParam("username") String username,
                                              @RequestParam("password") String password){
-        List<Userr> currentUser = userRepository.findUserrByUsernameAndPassword(username,password);
-        return currentUser;
+        return userRepository.findUserByUsernameAndPassword(username, password);
     }
 
 
