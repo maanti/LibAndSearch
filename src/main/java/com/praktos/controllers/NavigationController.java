@@ -51,4 +51,21 @@ public class NavigationController {
         model.setViewName("../static/catalog");
         return model;
     }
+
+    @RequestMapping(value = "/login")
+    public ModelAndView login() {
+        ModelAndView model = new ModelAndView();
+        model.setViewName("../static/autorization");
+        return model;
+    }
+
+    @RequestMapping(value = "/signin")
+    public ModelAndView signin() {
+        ModelAndView model = new ModelAndView();
+        model.setViewName("../static/meow");
+        return model;
+    }
+
+
+
 }

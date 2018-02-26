@@ -1,7 +1,9 @@
 package com.praktos.controllers;
 
 import com.praktos.entity.Sources;
+import com.praktos.entity.Userr;
 import com.praktos.repository.SourcesRepository;
+import com.praktos.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,9 @@ public class MainController {
 
     @Autowired
     private SourcesRepository sourcesRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @RequestMapping(value = "/findBook", method = RequestMethod.POST)
     public @ResponseBody
@@ -62,5 +67,13 @@ public class MainController {
         List<Sources> sources = sourcesRepository.findAll();
         return sources;
     }
+
+    @RequestMapping("/getUsers")
+    public @ResponseBody List<Userr> getUsers(@RequestParam("username") String username,
+                                             @RequestParam("password") String password){
+        List<Userr> currentUser = userRepository.findUserrByUsernameAndPassword(username,password);
+        return currentUser;
+    }
+
 
 }

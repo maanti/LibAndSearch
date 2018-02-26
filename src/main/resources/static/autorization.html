@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/login.css" rel="stylesheet" type="text/css"/>
+
+    <script src="js/html5.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+    <script src="js/jquery.localscroll-1.2.7-min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/authorization.js"></script>
+
+
+    <title>Авторизация</title>
+
+    </head>
+
+<body>
+
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+<div class="login-wrap">
+
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Войти</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Регистрация</label>
+        <div class="login-form">
+
+
+            <form id="authorizationForm" method="post" action= "/signin">
+                <!--см signin в Navigation Controller-->
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="username" class="label" id="userLabel">Логин</label>
+                        <input id="username" type="text" class="w3-input" name="username" required="true" placeholder="Введите имя пользователя"
+                               maxlength="20">
+                        <label for="username" style="color: transparent" id="AenterEmail">Заполните это поле!</label>
+                    </div>
+                    <div class="group">
+                        <label for="password" class="label">Пароль</label>
+                        <input id="password" type="password" class="w3-input" data-type="password" required="true"
+                               name="password" placeholder="Введите пароль" maxlength="20">
+                        <label for="password" style="color: transparent" id="AincorrectPassword">Заполните это поле!</label>
+                    </div>
+                    <div class="group">
+                        <input type="button" class="w3-button w3-middle w3-theme" value="Войти" id="AsubmitButton" onclick="checkInput()">
+                        <label for="AsubmitButton" style="color: transparent" id="notResult">Такого пользователя нет</label>
+
+                    </div>
+                    <div class="hr">
+                        <label id="error" style="color: red"></label>
+                    </div>
+                    <div class="foot-lnk">
+                        <a href="/reset" id="a">Забыли пароль?</a>
+                    </div>
+
+                </div>
+
+
+            </form>
+            <form id="registrationForm" method="get" action="/sendCode">
+                <div class="sign-up-htm" id="signUp">
+                    <div class="group">
+                        <label for="userName" class="label"> Имя</label>
+                        <input id="usesssrName" type="text" class="w3-input" name="name" placeholder="Ваше имя"
+                               onclick="noErrorRname()" maxlength="20">
+                        <label for="userName" style="color: transparent" id="enterName">Заполните это поле!</label>
+                    </div>
+                    <div class="group">
+                        <label for="userLastName" class="label">Фамилия</label>
+                        <input id="userLastName" type="text" class="w3-input" name="lastname"
+                               placeholder="Your lastname" maxlength="20">
+                        <label for="userLastName" style="color: transparent">lol</label>
+                    </div>
+                    <div class="group">
+                        <label for="eMail" class="label">E-mail</label>
+                        <input id="eMail" type="text" class="w3-input" name="e-mail" required="true"
+                               placeholder="Ваш E-mail" onclick="noErrorReMail()" maxlength="20">
+                        <output for="eMail" style="color: red" id="existEmail"></output>
+                        <label for="eMail" style="color: transparent" id="incorrectEMail">некорректный E-mail!</label>
+                    </div>
+                    <div class="group">
+                        <label for="password" class="label">Придумайте пароль</label>
+                        <input id="passwtttord" type="password" class="w3-input" required="true" name="password"
+                               placeholder="пароль" onclick="noErrorRpassword()" maxlength="20">
+                        <label for="password" style="color: transparent" id="enterPassword">Заполните это поле!</label>
+                    </div>
+                    <div class="group">
+                        <input type="button" class="w3-button w3-middle w3-theme" value="Зарегистрироваться" id="submitButton" onclick="ValidateEmail()">
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+
+<!--<form>-->
+<!--<h4> Авторизация  </h4>-->
+<!--<input class="name" type="text" placeholder="Имя пользователя"/>-->
+<!--<input class="pw" type="password" placeholder="Пароль"/>-->
+<!--<li><a href="#">Forgot your password?</a></li>-->
+<!--<input class="button" type="submit" value="Войти"/>-->
+<!--</form>-->
+
+
+
+<!--<style>-->
+    <!--* {-->
+        <!--margin:0;-->
+        <!--padding:0;-->
+        <!--font-family: 'Source Sans Pro', sans-serif;-->
+    <!--}-->
+
+    <!--body {-->
+         <!--background:#2c3e50;-->
+     <!--}-->
+
+    <!--form {-->
+        <!--position:relative;-->
+        <!--width:360px;-->
+        <!--height:250px;-->
+        <!--margin:50px auto;-->
+        <!--text-align:center;-->
+        <!--background:#ecf0f1;-->
+        <!--padding:40px;-->
+        <!-- -webkit-border-radius:20px 0 0 0;-->
+        <!-- -moz-border-radius:20px 0 0 0;-->
+        <!--border-radius:20px 0 0 0;-->
+        <!-- -webkit-box-shadow: 0px 1px 0px #ad392d, inset 0px 1px 0px white;-->
+        <!-- -moz-box-shadow: 0px 1px 0px #ad392d, inset 0px 1px 0px white;-->
+        <!--box-shadow: 0px 1px 0px #ad392d, inset 0px 1px 0px white;-->
+        <!--box-shadow: 20px 20px 20px;-->
+    <!--}-->
+
+    <!--h4 {-->
+        <!--font-family: 'Source Sans Pro', sans-serif;-->
+        <!--font-size:2em;-->
+        <!--font-weight:300;-->
+        <!--margin-bottom:25px;-->
+        <!--color:#7f8c8d;-->
+        <!--text-shadow:1px 1px 0px white;-->
+    <!--}-->
+
+    <!--input {-->
+        <!--display:block;-->
+        <!--width:315px;-->
+        <!--padding:14px;-->
+        <!-- -webkit-border-radius:6px;-->
+        <!-- -moz-border-radius:6px;-->
+        <!--border-radius:6px;-->
+        <!--border:0;-->
+        <!--margin-bottom:12px;-->
+        <!--color:#7f8c8d;-->
+        <!--font-weight:600;-->
+        <!--font-size:16px;-->
+    <!--}-->
+
+    <!--input:focus {-->
+        <!--background:#fafafa;-->
+    <!--}-->
+
+
+    <!--li {-->
+        <!--position:absolute;-->
+        <!--right:40px;-->
+        <!--bottom:62px;-->
+        <!--list-style:none;-->
+    <!--}-->
+
+    <!--a, a:visited {-->
+        <!--text-decoration:none;-->
+        <!--color:#7f8c8d;-->
+        <!--font-weight:400;-->
+        <!--text-shadow:1px 1px 0px white;-->
+        <!-- -webkit-transition: all .3s ease-in-out;-->
+        <!-- -moz-transition: all .3s ease-in-out;-->
+        <!--transition: all .3s ease-in-out;-->
+    <!--}-->
+
+    <!--.button {-->
+        <!--position:relative;-->
+        <!--float:left;-->
+        <!--width:145px;-->
+        <!--margin-top:10px;-->
+        <!--background:#3498db;-->
+        <!--color:#fff;-->
+        <!--font-weight:400;-->
+        <!--text-shadow:1px 1px 0px #2d7baf;-->
+        <!--box-shadow:0px 3px 0px #2d7baf;-->
+        <!-- -webkit-transition: all .3s ease-in-out;-->
+        <!-- -moz-transition: all .3s ease-in-out;-->
+        <!--transition: all .3s ease-in-out;-->
+    <!--}-->
+
+
+<!--</style>-->
+</html>
