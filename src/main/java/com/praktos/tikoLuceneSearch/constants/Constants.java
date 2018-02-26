@@ -1,11 +1,9 @@
 package com.praktos.tikoLuceneSearch.constants;
-
 /**
  * Globally shared constants should be here
  */
 public final class Constants {
+    private Constants() {}
 
-    private Constants() {
-    }
-    public static String TMP_DIR = System.getProperty("java.io.tmpdir");
+    public static String PATH_TO_INDEX_FOLDER = "./tmp/searcher_index";
 }

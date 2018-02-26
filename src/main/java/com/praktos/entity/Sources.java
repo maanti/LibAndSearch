@@ -106,7 +106,7 @@ public class Sources {
         this.path = path;
     }
 
-    protected Sources(){}
+    public Sources(){}
 
 
     @Override
@@ -116,7 +116,7 @@ public class Sources {
 
         Sources sources = (Sources) o;
 
-        if (id != sources.id) return false;
+        if (!id.equals(sources.id)) return false;
         if (name != null ? !name.equals(sources.name) : sources.name != null) return false;
         if (author != null ? !author.equals(sources.author) : sources.author != null) return false;
         if (publisher != null ? !publisher.equals(sources.publisher) : sources.publisher != null) return false;
@@ -125,7 +125,6 @@ public class Sources {
         if (link != null ? !link.equals(sources.link) : sources.link != null) return false;
         if (tags != null ? !tags.equals(sources.tags) : sources.tags != null) return false;
         if (path != null ? !path.equals(sources.path) : sources.path != null) return false;
-
         return true;
     }
 

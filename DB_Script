@@ -1,4 +1,5 @@
 DROP TABLE sources;
+CREATE EXTENSION pg_trgm;
 CREATE TABLE sources
 (
   id        SERIAL  NOT NULL
@@ -7,7 +8,7 @@ CREATE TABLE sources
   name      VARCHAR,
   author    VARCHAR,
   publisher VARCHAR,
-  year      VARCHAR,
+  year      INTEGER,
   type      VARCHAR,
   link      VARCHAR,
   path      VARCHAR,
