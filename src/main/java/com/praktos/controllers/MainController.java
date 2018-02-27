@@ -1,7 +1,7 @@
 package com.praktos.controllers;
 
 import com.praktos.entity.Sources;
-import com.praktos.entity.User;
+import com.praktos.entity.Userr;
 import com.praktos.repository.SourcesRepository;
 import com.praktos.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,9 +71,14 @@ public class MainController {
     }
 
     @RequestMapping("/getUsers")
-    public @ResponseBody List<User> getUsers(@RequestParam("username") String username,
-                                             @RequestParam("password") String password){
+    public @ResponseBody List<Userr> getUsers(@RequestParam("username") String username,
+                                              @RequestParam("password") String password){
         return userRepository.findUserByUsernameAndPassword(username, password);
+    }
+
+    @RequestMapping("/lol")
+    public @ResponseBody List<Userr> getU(){
+        return userRepository.findUserByUsernameAndPassword("aa", "aa");
     }
 
 

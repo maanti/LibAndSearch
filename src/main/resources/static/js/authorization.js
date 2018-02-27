@@ -14,6 +14,7 @@
 
 
 function checkInput() {
+    var result;
                 $.ajax({
                     url: "/getUsers",
                     type: "POST",
@@ -24,27 +25,35 @@ function checkInput() {
                     dataType: "json",
                     success:
                         function (jq) {
-                            if (jq.length !== 0) {
-                                alert("Нашел");
-                                return true;
-                            } else {
+                            alert(jq.length);
+                            alert(jg.username);
+                            if (jq.length === 0) {
                                 let nameField = document.getElementById("usernameSignIn").value;
                                 let passwordField = document.getElementById("passwordSignIn").value;
                                 if (nameField.length === 0 || passwordField.length === 0) {
                                     alert("Заполните пустые поля");
+                                    result = false;
                                     return false;
                                 }
                                 else {
                                     alert("Неверный логин или пароль");
+                                    result = false;
                                     return false;
                                 }
-
+                            } else {
+                                alert("Нашел");
+                                result = true;
+                                return true;
                             }
                         },
                     error:
-                        alert("Error")
+                        function() {
+                            alert("Error");
+                            result = false;
+                            return false;
+                        }
                 });
-
+return result;
 }
 
 // function noErrorName() {

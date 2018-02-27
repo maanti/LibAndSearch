@@ -4,11 +4,12 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
-public class User {
+public class Userr {
     private int id;
-    private String firstname;
+    private String firsname;
     private String lastname;
     private String username;
     private String password;
@@ -24,13 +25,13 @@ public class User {
     }
 
     @Basic
-    @Column(name = "firstname")
-    public String getFirstname() {
-        return firstname;
+    @Column(name = "firsname")
+    public String getFirsname() {
+        return firsname;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirsname(String firsname) {
+        this.firsname = firsname;
     }
 
     @Basic
@@ -67,25 +68,17 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        if (id != user.id) return false;
-        if (firstname != null ? !firstname.equals(user.firstname) : user.firstname != null) return false;
-        if (lastname != null ? !lastname.equals(user.lastname) : user.lastname != null) return false;
-        if (username != null ? !username.equals(user.username) : user.username != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
-
-        return true;
+        Userr userr = (Userr) o;
+        return id == userr.id &&
+                Objects.equals(firsname, userr.firsname) &&
+                Objects.equals(lastname, userr.lastname) &&
+                Objects.equals(username, userr.username) &&
+                Objects.equals(password, userr.password);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
-        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
-        result = 31 * result + (username != null ? username.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        return result;
+
+        return Objects.hash(id, firsname, lastname, username, password);
     }
 }
